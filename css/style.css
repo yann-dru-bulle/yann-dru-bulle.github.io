@@ -1,100 +1,220 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Inder&display=swap');
 
 :root {
-    --dark: #13242b;
-    --pale: #f7f0e2;
-    --accent: #f8cc47;
-    --highlight: #146fac;
-}
+    --black: rgba(20, 26, 38, 1);
+    --dark: rgba(54, 69, 73, 1);
+    --pale: rgba(204, 184, 166, 1);
+    --bright: rgba(236, 228, 196, 1);
+    --highlight: rgba(126, 120, 113, 1);
+    --accent: rgba(184, 59, 0, 1);
 
-.inder-regular {
-    font-family: "Inder", sans-serif;
+    --black-shade: rgba(14, 22, 38, 0.56);
+    --accent-shade: rgba(87, 28, 0, 0.42);
+
+    --thumb-shade: var(--black-shade)
+}
+* {
+    font-family: "Inder", serif;
     font-weight: 400;
     font-style: normal;
+    transition: all 0.1s ease-in-out;
 }
 
-.bungee-regular {
+html {
+    overflow-y:scroll;
+}
+
+h1,
+h2,
+h3 {
     font-family: "Bungee", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-*,
-*::before,
-*::after {
+body {
+    background-color: var(--bright);
+    color: var(--black);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-html {
-    font-size: 100%;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.5;
+header {
     background-color: var(--pale);
+    padding: 3em 2em;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+header h1 {
+    color: var(--black);
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    color: var(--accent);
+    margin-top: 1em;
+    font-size: 1.2rem;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+nav > * {
+    margin: 0 .3em;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    background-color: var(--pale);
+    max-width: 100em;
+    width: 100%;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2rem;
+}
+
+h4 a {
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h4 a:hover {
+    color: var(--accent);
+}
+
+p {
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+section {
+    background-color: var(--pale);
+    padding: 1.5em;
+    margin-bottom: 1em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+section p {
+    color: var(--black);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    color: var(--dark);
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: var(--pale);
+    padding: 3em 2em;
+    text-align: center;
+    margin-top: 4em;
+}
+
+footer p {
     color: var(--dark);
 }
 
 a {
-    color: inherit;
+    color: var(--highlight);
     text-decoration: none;
-    transition: color 0.1s ease-in-out;
 }
 
 a:hover {
-    color: var(--highlight);
+    color: var(--accent);
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.visible {
-    display: block !important;
-}
-
-.flex {
+.thumbnail {
+    --thumb-image: url('../images/default.jpg');
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-family: "Bungee", serif;
+    color: var(--bright);
+    width: 512px;
+    height: 288px;
+    background:
+        linear-gradient(var(--thumb-shade), var(--thumb-shade)),
+        var(--thumb-image) center / cover no-repeat;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 1rem 0;
-    font-weight: 700;
+.thumbnail:hover {
+    color: var(--pale);
+    --thumb-shade: var(--accent-shade);
 }
 
-p {
-    margin: 0 0 1rem 0;
+.project-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 2em;
+    margin: 2em auto;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
+.project-item {
+    display: block;
+    width: 512px;
+    max-height: 512px;
+    overflow: hidden;
+}
+
+.project-item:hover > .thumbnail {
+    color: var(--pale);
+    --thumb-shade: var(--accent-shade);
+}
+
+.project-info {
+    width: inherit;
+    /* margin: 0 0; */
+    padding: 1em 1em;
+    background-color: var(--bright);
+    box-sizing: border-box;
+}
+
+.project-info > p {
+    margin: 0;
+}
+
+@media (max-width: 48rem) {
+    h1 {
+        font-size: 2em;
     }
 
-    html {
-        font-size: 90%;
+    header,
+    footer,
+    main,
+    section {
+        padding: 2em 1em;
     }
-}
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
+    section {
+        margin-bottom: 3em;
     }
 }
