@@ -8,8 +8,8 @@
     --highlight: rgba(126, 120, 113, 1);
     --accent: rgba(184, 59, 0, 1);
 
-    --black-shade: rgba(14, 22, 38, 0.56);
-    --accent-shade: rgba(87, 28, 0, 0.42);
+    --black-shade: rgba(9, 17, 34, 0.582);
+    --accent-shade: rgba(80, 27, 2, 0.438);
 
     --thumb-shade: var(--black-shade)
 }
@@ -164,7 +164,7 @@ a:hover {
     justify-content: center;
     font-size: 2.5em;
     font-family: "Bungee", serif;
-    color: var(--bright);
+    color: var(--pale);
     width: 560px;
     height: 315px;
     background:
@@ -173,7 +173,7 @@ a:hover {
 }
 
 .thumbnail:hover {
-    color: var(--pale);
+    color: var(--bright);
     --thumb-shade: var(--accent-shade);
 }
 
@@ -209,7 +209,7 @@ a:hover {
 }
 
 .project-item:hover > .thumbnail {
-    color: var(--pale);
+    color: var(--bright);
     --thumb-shade: var(--accent-shade);
 }
 
@@ -223,6 +223,34 @@ a:hover {
 
 .project-info > p {
     margin: 0;
+}
+
+.project {
+    margin-top: -4em;
+    padding: 1em;
+    align-items: center;
+    overflow: hidden;
+}
+
+.project-banner {
+    --thumb-image: url('../images/default.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-family: "Bungee", serif;
+    color: var(--pale);
+    height: 640px;
+    width: 1280px;
+    background:
+        /* linear-gradient(var(--thumb-shade), var(--thumb-shade)), */
+        var(--thumb-image) center / cover no-repeat;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
 }
 
 @media (max-width: 48rem) {

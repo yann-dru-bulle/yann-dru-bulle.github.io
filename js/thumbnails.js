@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.thumbnail').forEach(thumbnail => {
-    const imgUrl = thumbnail.dataset.img;
-    thumbnail.style.setProperty('--thumb-image', `url(${imgUrl})`);
+  document.querySelectorAll('[data-img]').forEach(element => {
+    const imgUrl = element.dataset.img;
+    console.log(`Setting element image: ${imgUrl}`);
+    element.style.setProperty('--thumb-image', `url(${imgUrl})`);
   });
 });
