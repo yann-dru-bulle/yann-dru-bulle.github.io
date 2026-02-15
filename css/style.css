@@ -44,9 +44,16 @@ body {
 
 header {
     background-color: var(--pale);
-    padding: 3em 2em;
-    text-align: center;
-    margin-bottom: 4em;
+}
+
+.header-content {
+    max-width: 75.5em;
+    margin: 0 auto;
+    padding: 2em 0 1em 0;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
 
 header h1 {
@@ -57,7 +64,7 @@ header h1 {
 
 header h2 {
     color: var(--accent);
-    margin-top: 1em;
+    /* margin-top: 1em; */
     font-size: 1.2rem;
 }
 
@@ -70,16 +77,16 @@ nav {
 }
 
 nav > * {
-    margin: 0 .3em;
     width: 100%;
     text-align: center;
 }
 
 main {
-    background-color: var(--pale);
-    max-width: 100em;
+    background-color: var(--pale-shade);
+    max-width: 80em;
     width: 100%;
     margin: 0 auto;
+    padding: 6em 2em 2em 2em;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -108,9 +115,9 @@ p {
 }
 
 section {
-    background-color: var(--pale);
+    /* background-color: var(--pale); */
     padding: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -134,7 +141,7 @@ footer {
     background-color: var(--pale);
     padding: 3em 2em;
     text-align: center;
-    margin-top: 4em;
+    /* margin-top: 4em; */
 }
 
 footer p {
@@ -158,8 +165,8 @@ a:hover {
     font-size: 2.5em;
     font-family: "Bungee", serif;
     color: var(--bright);
-    width: 512px;
-    height: 288px;
+    width: 560px;
+    height: 315px;
     background:
         linear-gradient(var(--thumb-shade), var(--thumb-shade)),
         var(--thumb-image) center / cover no-repeat;
@@ -170,17 +177,33 @@ a:hover {
     --thumb-shade: var(--accent-shade);
 }
 
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.5em;
+    gap: 2em;
+    padding: 0 0 auto 0;
+    margin: 0;
+}
+
 .project-list {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em 2em;
+    gap: 2em 1em;
     margin: 2em auto;
 }
 
 .project-item {
     display: block;
-    width: 512px;
+    width: 560px;
     max-height: 512px;
     overflow: hidden;
 }
@@ -192,9 +215,9 @@ a:hover {
 
 .project-info {
     width: inherit;
-    /* margin: 0 0; */
+    font-size: 1.25em;
     padding: 1em 1em;
-    background-color: var(--bright);
+    background-color: var(--pale);
     box-sizing: border-box;
 }
 
