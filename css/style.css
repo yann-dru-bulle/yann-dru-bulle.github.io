@@ -49,7 +49,7 @@ header {
 .header-content {
     max-width: 75.5em;
     margin: 0 auto;
-    padding: 2em 0 1em 0;
+    padding: 1em 0 0.5em 0;
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -64,7 +64,7 @@ header h1 {
 
 header h2 {
     color: var(--accent);
-    /* margin-top: 1em; */
+    margin-top: 0;
     font-size: 1.2rem;
 }
 
@@ -158,18 +158,26 @@ a:hover {
 }
 
 .thumbnail {
-    --thumb-image: url('../images/default.jpg');
+    --thumb-image: url('/images/default.jpg');
+    color: var(--pale);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2.5em;
-    font-family: "Bungee", serif;
-    color: var(--pale);
     width: 560px;
     height: 315px;
     background:
         linear-gradient(var(--thumb-shade), var(--thumb-shade)),
         var(--thumb-image) center / cover no-repeat;
+}
+
+.thumbnail > p {
+    max-width: 67%;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    font-family: "Bungee", serif;
+    color: inherit;
 }
 
 .thumbnail:hover {
@@ -225,32 +233,37 @@ a:hover {
     margin: 0;
 }
 
+.project-banner {
+    margin-top: -3em;
+    --thumb-image: url('/images/default.jpg');
+    height: 560px;
+    width: 1280px;
+    background: var(--thumb-image) center / cover no-repeat;
+}
+
 .project {
-    margin-top: -4em;
-    padding: 1em;
+    padding: 2em;
+    background-color: var(--pale);
     align-items: center;
     overflow: hidden;
 }
 
-.project-banner {
-    --thumb-image: url('../images/default.jpg');
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5em;
-    font-family: "Bungee", serif;
-    color: var(--pale);
-    height: 640px;
-    width: 1280px;
-    background:
-        /* linear-gradient(var(--thumb-shade), var(--thumb-shade)), */
-        var(--thumb-image) center / cover no-repeat;
+.project > span{
+    font-size: 1.25em;
+    margin: 0.25em 0em 1em 0em;
+    color: var(--dark);
 }
 
-.project img {
+.project-display {
+    display: flex;
+    gap: 1em;
     max-width: 100%;
-    height: auto;
-    margin-top: 1em;
+}
+
+.project-display img {
+    flex: 1 1 1;
+    max-height: 640px;
+    min-width: 0;
 }
 
 @media (max-width: 48rem) {
